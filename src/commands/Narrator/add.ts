@@ -3,6 +3,7 @@ import {
     ChatInputCommandInteraction,
     CommandInteractionOptionResolver,
 } from "discord.js";
+import { errorReply } from "../../utils/replies";
 
 const data = new SlashCommandBuilder()
     .setName("add")
@@ -22,6 +23,11 @@ module.exports = {
         const targetUser = (
             interaction.options as CommandInteractionOptionResolver
         ).getUser("player", true);
+        if (!interaction.channel || !interaction.channel.isThread())
+            return await errorReply(
+                interaction,
+                "You can only use this command in threads."
+            );
         await interaction.reply({ content: targetUser.toString() });
     },
 };

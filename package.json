@@ -1,5 +1,5 @@
 {
-  "name": "lionscreed-bot",
+  "name": "loup-garou-bot",
   "version": "1.0.0",
   "main": "./build/index.js",
   "scripts": {

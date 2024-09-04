@@ -91,7 +91,9 @@ module.exports = {
             fetchReply: true,
         });
 
-        const messageCollector = interaction.channel?.createMessageCollector({
+        const messageCollector = (
+            interaction.channel as TextChannel
+        ).createMessageCollector({
             filter: (msg) => msg.author.id === interaction.user.id,
             max: 1,
             time: timeoutDurationInSeconds * 1000,
@@ -102,7 +104,7 @@ module.exports = {
 
             await msg.delete();
 
-            interaction.channel?.sendTyping();
+            await (interaction.channel as TextChannel).sendTyping();
             const providedRoleNames = msg.content.split("\n");
             if (providedRoleNames.length !== playerCount)
                 return await errorReply(

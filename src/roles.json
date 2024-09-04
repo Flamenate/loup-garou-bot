@@ -1,0 +1,498 @@
+{
+	"Loup Garou": {
+		"camp": "Loups",
+		"description": "Y9oum fellil m3a s7abou les loups yo9tlou chkoun.",
+		"imgUrl": "https://i.servimg.com/u/f55/18/31/96/00/carte210.png",
+		"aliases": [
+			"Loup Garou",
+			"Loup",
+			"Wolf"
+		],
+		"nightPriority": 3
+	},
+	"Père Infecte": {
+		"camp": "Loups",
+		"description": "Ynajem y'infecti elli bech yo9tlouh s7abou les loups bech ywalli yal3ab m3ahom fi blaset ma ymout. Ynajem y'infecti mara bark tor7 kemel.",
+		"imgUrl": "https://lh3.googleusercontent.com/3y7by-WT-BEUnfz3mWVX9CmiCWSADaP4WM_q0rAUBPSD8-WJ9ew4-W8KkpIHW18KpFmOPbI_URC_YG8e3AuKFvaFyFTPlitAgSuCHZcfyC9D0JUG_4hwPK8pIvkEVVUEduzPGhKZ",
+		"aliases": [
+			"Père",
+			"Père Infecte",
+			"Papa",
+			"Père des Loups",
+			"Father of Wolves"
+		],
+		"nightPriority": 4
+	},
+	"Loup Noir": {
+		"camp": "Loups",
+		"description": "Yakhtar chkoun ysakktou fel nhar. L3abd hedheka ywalli ma3andouch l7a9 ya7ki jemla fel nhar hedheka, ama 3andou 7a9 yvoti w y'accusi.\n__Yekhdem à partir mel lila thenya__.",
+		"imgUrl": "https://cdn.discordapp.com/attachments/471476610563047424/634827148758089785/mt54Wfy4_dQa4psyNvoIHG7-QJ8.png",
+		"aliases": [
+			"Loup Noir",
+			"Black Wolf"
+		],
+		"nightPriority": 6
+	},
+	"Loup Rouge": {
+		"camp": "Loups",
+		"description": "Kif lcommissaire bedhabt, ama yel3ab m3a les loups.\n__Yekhdem à partir mel lila thenya__.",
+		"imgUrl": "https://i.imgur.com/eyL9XbP.png",
+		"aliases": [
+			"Loup Rouge",
+			"Red Wolf"
+		],
+		"nightPriority": 1
+	},
+	"Loup Bleu": {
+		"camp": "Loups",
+		"description": "Ki tchoufou l voyante, l narrateur yakhtar role random y9oulou fi blaset ma y9oul \"Loup Bleu\"",
+		"imgUrl": "https://i.imgur.com/V3cfH8x.jpg",
+		"aliases": [
+			"Loup Bleu"
+		]
+	},
+	"Loup Rose": {
+		"camp": "Loups",
+		"description": "Yakhtar chkoun y7addedlou façon mou3ayna ya7ki biha (mayonto9ch S, y3ayet, ya7ki bel français...).\n__Yekhdem à partir mel lila thenya__.",
+		"imgUrl": "https://media.discordapp.net/attachments/635469308125904911/837848634162413569/carte311.png",
+		"aliases": [
+			"Loup Rose"
+		],
+		"nightPriority": 6
+	},
+	"Loup Bavard": {
+		"camp": "Loups",
+		"description": "Kol lila, narrateur ya3tih kelma lezmou fel nhar y9oulha, sinon yokhrej éliminé.\n__Yebda à partir mel lila thenya__.",
+		"imgUrl": "",
+		"aliases": [
+			"Loup Bavard"
+		]
+	},
+	"Loup Voyant": {
+		"camp": "Loups",
+		"description": "Kol lila ychouf role chkoun w ya3ref rolou. Ama ma ynajemch yetkalem jemla fi groupe les loups.",
+		"imgUrl": "https://cdn.discordapp.com/attachments/690729960230354974/1258059247917469706/latest.png?ex=6686aa7a&is=668558fa&hm=5e4f3237e08cfc1c6768ac75b79f103ca18d5c394e9261f0863fbdb4e9eaadce&",
+		"aliases": [
+			"Loup Voyant"
+		],
+		"nightPriority": 6
+	},
+	"Loup Junior": {
+		"camp": "Loups",
+		"description": "Kif ymout, lila jeya les loups yo9tlou zouz menness.",
+		"imgUrl": "https://cdn.discordapp.com/attachments/690729960230354974/1258060047821307904/latest.png?ex=6686ab39&is=668559b9&hm=c8ee6181f2e719090b743de657f2a7aab87528a636af2192b8386e5324a53532&",
+		"aliases": [
+			"Loup Junior"
+		]
+	},
+	"Paladin": {
+		"camp": "Village",
+		"description": "Y9oum fellil yakhtar we7ed ya7mih bech mayo9tlouhech les loups lila heki. Maynejemch ya7mi nafs l3abd martin 3la b3adhhom, w ynajem ya7mi rou7ou zeda.",
+		"imgUrl": "https://i.servimg.com/u/f55/18/31/96/00/carte410.png",
+		"aliases": [
+			"Paladin",
+			"Salvateur",
+			"Shielder",
+			"Protector"
+		],
+		"nightPriority": 2
+	},
+	"Voyante": {
+		"camp": "Village",
+		"description": "Kol lila takhtar chkoun tchouflou rolou. El sbe7 y9oul el narrateur 3la role l3abd li chefettou.",
+		"eventQuestion": "Chkoun chefet l voyante?",
+		"imgUrl": "https://i.servimg.com/u/f55/18/31/96/00/carte310.png",
+		"aliases": [
+			"Voyante",
+			"Seer",
+			"Vovo"
+		],
+		"nightPriority": 6
+	},
+	"Sorcière": {
+		"camp": "Village",
+		"description": "3andha 2 potions: Potions to9tel w potion t7ayi. L potion li to9tel tnajem testa3melha fellil bech to9tel ay we7ed, w potion li t7ayi tnajem t7ayi l 3abd li bech yo9tlouh les loups. Kol potion testa3melha marra bark tor7 kemel.",
+		"imgUrl": "https://i.servimg.com/u/f55/18/31/96/00/carte510.png",
+		"aliases": [
+			"Sorcière",
+			"Witch",
+			"Soso"
+		],
+		"nightPriority": 5
+	},
+	"Chasseur": {
+		"camp": "Village",
+		"description": "Ki ymout yo9tel m3ah chkoun.",
+		"imgUrl": "https://i.servimg.com/u/f55/18/31/96/00/carte610.png",
+		"aliases": [
+			"Chasseur",
+			"Hunter"
+		]
+	},
+	"Cupidon": {
+		"camp": "Village",
+		"description": "Yakhtar zouz 3bed y3arselhom. El zouz hedhoukom ywaliw ya3rfou rolet b3adhhom w ki ymout we7ed fihom ymout lekher.\n**Note:** Idha kenhom mayal3bouch m3a b3adh'hom (ex: Loup/Villageois), ywaliw yerb7ou m3a b3adh'hom kahaw (mouch m3a team mte3hom).",
+		"imgUrl": "https://i.servimg.com/u/f55/18/31/96/00/carte710.png",
+		"aliases": [
+			"Cupidon"
+		]
+	},
+	"Ancien": {
+		"camp": "Village",
+		"description": "Les loups lezemhom yodhrbouh martin (2 fois) bech yo9tlouh. Idha ken yo9tlouh les villageois, ness kol yakhsrou les pouvoirs mte3hom.",
+		"imgUrl": "https://i.servimg.com/u/f55/18/31/96/00/carte810.png",
+		"aliases": [
+			"Ancien"
+		]
+	},
+	"Berger": {
+		"camp": "Village",
+		"description": "3andou 3 3lelech. Kol lila y9oum yab3ath menhom 9ad ma y7eb l 3bed mou3aynin. Idha ken 3allouch yti7 3and loup yettekel w mayarja3ch. Fel sbe7 el narrateur y9oul el berger 9addeh rja3lou men 3allouch.",
+		"eventQuestion": "9adeh men 3alouch rja3 lel Berger?",
+		"imgUrl": "https://i.servimg.com/u/f58/17/28/79/95/lordsh10.jpg",
+		"aliases": [
+			"Berger",
+			"Shepherd"
+		],
+		"nightPriority": 5
+	},
+	"Ange": {
+		"camp": "Village",
+		"description": "L'but mte3ou anou ymout mel __nhar__ louleni. Idha ken t3ada el nhar w howa mametech, yarja3 simple villageois.",
+		"imgUrl": "https://www.loups-garous-en-ligne.com/jeu/assets/images/carte19.png",
+		"aliases": [
+			"Ange"
+		]
+	},
+	"Renard": {
+		"camp": "Village",
+		"description": "Ynajem kol lila yakhtar 3 3bed. Idha ken 3alla9al we7ed fihom loup, ynajem y3awed lila li ba3d'ha, sinon yakhser l pouvoir mte3ou.\nNarrateur kol sbe7 y9oul renard 9a3doulou wala tna7awlou les pouvoirs mte3ou.",
+		"eventQuestion": "Renard mazel 3andou les pouvoirs mte3ou?",
+		"imgUrl": "https://ekladata.com/WVtIq0FwhlMKMAD4iPn8AqTZu2k.jpg",
+		"aliases": [
+			"Renard",
+			"Fox",
+			"Tha3leb"
+		],
+		"nightPriority": 5
+	},
+	"Dame Nature": {
+		"camp": "Village",
+		"description": "3andha l7a9 bech tes2el question kol lila lel narrateur (max 3), w howa ma3andouch l7a9 yjewebha ken b yes or no. Les roles protectifs mayekhdmouch 3liha (pala, sorcière...), w l voyante tchoufha loup garou.",
+		"imgUrl": "https://i.servimg.com/u/f58/17/28/79/95/gz4f9410.jpg",
+		"aliases": [
+			"Dame Nature",
+			"Mother Nature"
+		]
+	},
+	"Gentleman": {
+		"camp": "Village",
+		"description": "Ma3andouch l7a9 yvoti 3al bnet, ama chasseur maynajemch yo9tlou wel voyante ma tchoufouch (kif loup bleu).",
+		"imgUrl": "https://i.servimg.com/u/f58/17/28/79/95/gentle10.png",
+		"aliases": [
+			"Gentleman",
+			"Simp"
+		]
+	},
+	"Livreur": {
+		"camp": "Village",
+		"description": "Kol lila yemchi ydo9 3la beb we7ed meli yal3bou, ken yti7 3al sorcière ynajem yzidha potion mta3 7yet wala potion mta3 mout (howa yakhtar). Ken ydo9 3la loup ymout.",
+		"imgUrl": "https://i.servimg.com/u/f58/17/28/79/95/carte315.png",
+		"aliases": [
+			"Livreur"
+		],
+		"nightPriority": 2
+	},
+	"Devin Blanc": {
+		"camp": "Village",
+		"description": "Kol lila narrateur yemchi y9olou les loups chkoun khtarou bech yo9tlou, ama ma ynajem yman3ou 7ad ken yo9tlouh les loups.",
+		"imgUrl": "",
+		"aliases": [
+			"Devin Blanc"
+		],
+		"nightPriority": 5
+	},
+	"Fossoyeur": {
+		"camp": "Village",
+		"description": "Kif ymout, el narrateur y9oul zouz asemi yakhtarhom howa: we7ed loup w lekher ndhif.",
+		"imgUrl": "",
+		"aliases": [
+			"Fossoyeur"
+		]
+	},
+	"Confesseur": {
+		"camp": "Village",
+		"description": "Ynajem ywa99af el tor7 fi ay la7dha fel nhar (yeb3ath message lel narrateur) w yforci 3abd bech y9oul 3al role mte3ou (kenou infecté may9oulech).\n3andou l7a9 yesta3mel pouvoirou mara bark.",
+		"imgUrl": "https://p5.storage.canalblog.com/50/80/1355275/103540691_o.jpg",
+		"aliases": [
+			"Confesseur"
+		]
+	},
+	"Ours": {
+		"camp": "Village",
+		"description": "Kol sbe7, idha ken l3abd li fou9 w ta7t l'ours (fel vc) we7ed fihom Loup Garou, l'ours ygarger.\nKen yetinfecta ywali dima ygarger.",
+		"eventQuestion": "L'ours ygarger?",
+		"imgUrl": "https://www.loups-garous-en-ligne.com/jeu/assets/images/carte23.png",
+		"aliases": [
+			"Ours",
+			"Bear",
+			"Dob"
+		]
+	},
+	"Serveur": {
+		"camp": "Village",
+		"description": "Kol lila ynajem yblocki l vote 3la 3abd.",
+		"eventQuestion": "Chkoun bloqua el serveur mel vote?",
+		"imgUrl": "https://i.servimg.com/u/f58/17/28/79/95/carte426.png",
+		"aliases": [
+			"Serveur"
+		],
+		"nightPriority": 6
+	},
+	"Joker": {
+		"camp": "Village",
+		"description": "Ki ymout ynajem ya3ti life okhra l we7ed mel players.",
+		"imgUrl": "https://i.servimg.com/u/f58/17/28/79/95/carte424.png",
+		"aliases": [
+			"Joker"
+		]
+	},
+	"Barbier": {
+		"camp": "Village",
+		"description": "Ynajem ywa99ef el la3ba fi ay la7dha fel nhar (yeb3ath message lel narrateur) bech yo9tel chkoun. Idha ken li 9atlou tla3 mahouch loup, ymout m3ah.",
+		"imgUrl": "https://imgur.com/EMKTIVx",
+		"aliases": [
+			"Barbier",
+			"7ajjem"
+		]
+	},
+	"Commissaire": {
+		"camp": "Village",
+		"description": "Kol lila ynajem yakhtar we7ed ykhalih mayesta3melch pouvoirou lila heki. Maynejemch yakhtar nafs l3abd liltin 3la b3adhhom.",
+		"imgUrl": "https://i.servimg.com/u/f55/18/31/96/00/aph_en10.jpg",
+		"aliases": [
+			"Commissaire"
+		],
+		"nightPriority": 1
+	},
+	"Corbeau": {
+		"camp": "Village",
+		"description": "Kol lila (starting mel lila thenya) ynajem y7ot 2 votes 3la chkoun",
+		"eventQuestion": "3la chkoun 7att votetou l Corbeau?",
+		"imgUrl": "https://www.loups-garous-en-ligne.com/jeu/assets/images/carte17.png",
+		"aliases": [
+			"Corbeau",
+			"Crow"
+		],
+		"nightPriority": 6
+	},
+	"Fils de Lune": {
+		"camp": "Village",
+		"description": "Ki ymout, les loups may9oumouch lila jeya.",
+		"imgUrl": "https://i.servimg.com/u/f58/17/28/79/95/carte423.png",
+		"aliases": [
+			"Fils de Lune",
+			"Weld l gamra",
+			"Son of the Moon"
+		]
+	},
+	"Curieux": {
+		"camp": "Village",
+		"description": "Yakhtar we7ed ya3rfou 9amchi fellil.",
+		"eventQuestion": "Li chefou l curieux 9am fellil?",
+		"imgUrl": "https://cdn.discordapp.com/attachments/384096729508610048/634821877230993418/carte-16.png",
+		"aliases": [
+			"Curieux",
+			"Curious"
+		],
+		"nightPriority": 6
+	},
+	"Simple Villageois": {
+		"camp": "Village",
+		"description": "Ma3andouch role spécial, 3abd 3adi.",
+		"imgUrl": "https://i.servimg.com/u/f55/18/31/96/00/carte110.png",
+		"aliases": [
+			"Simple Villageois",
+			"Simple",
+			"Zkim"
+		]
+	},
+	"Enfant Sauvage": {
+		"camp": "Village",
+		"description": "Lila loula yakhtar idole, idha ken ymout l idole hedheka, l'enfant sauvage ywalli loup.",
+		"imgUrl": "https://www.loups-garous-en-ligne.com/jeu/assets/images/carte16.png",
+		"aliases": [
+			"Enfant Sauvage",
+			"Wild Child"
+		]
+	},
+	"Lapin": {
+		"camp": "Village",
+		"description": "Kol lila 3andou 2 chocolats, yfara9hom 3la zouz menness. Ken el chocolat ti7 3and villageois yekelha. W fel sbeh narrateur y9oul 9adeh men chocolat teklét.\nKen yetbloqua bel loup rouge el chocolawet yetteklou par défaut.",
+		"eventQuestion": "9adeh men chocolat klewha lel lapin?",
+		"imgUrl": "https://cdn.discordapp.com/attachments/690729960230354974/1258056490908909598/latest.png?ex=6686a7e8&is=66855668&hm=f2aaa910a269213d3ba79fc96b711a2bf5f8cac9ea1807d0c5b550deebbd359c&",
+		"aliases": [
+			"Lapin",
+			"Arnoub",
+			"Arneb",
+			"Arnab"
+		],
+		"nightPriority": 6
+	},
+	"Juge Bègue": {
+		"camp": "Village",
+		"description": "3andou l7a9 marra ywa99af el tor7 fel nhar w ya3mel vote (bekhlef l vote l3adi).",
+		"imgUrl": "https://cdn.discordapp.com/attachments/690729960230354974/1258056716159815680/latest.png?ex=6686a81e&is=6685569e&hm=e6a7923bb073775950c2e9eb4887961702cca177984a957b077c7a665ee706c6&",
+		"aliases": [
+			"Juge Bègue"
+		]
+	},
+	"Policier": {
+		"camp": "Village",
+		"description": "Kol lila yhez chkoun lel 7abs. Eli yethazz maynejemch yesta3mel pouvoirou el lila hedhika, w maymoutech.",
+		"imgUrl": "https://cdn.discordapp.com/attachments/690729960230354974/1258057138274832474/Policier.png?ex=6686a883&is=66855703&hm=04a7010a5b1298298c3b606f11e0507576a74598bdf2e8e8309328ded79f023f&",
+		"aliases": [
+			"Policier",
+			"ACAB",
+			"7akem"
+		],
+		"nightPriority": 1
+	},
+	"Servante Dévouée": {
+		"camp": "Village",
+		"description": "Kol lila ba3d ma yakhtarou loupet chkoun yo9tlou, ynajem ydha7i brou7ou w ymout fi blaset l 3abd hedheka.",
+		"imgUrl": "https://cdn.discordapp.com/attachments/690729960230354974/1258058447430225941/latest.png?ex=6686a9bb&is=6685583b&hm=b96ae3695295da5a76f20c132c65a826a509d3f524ed6304ea409f463a4e9df6&",
+		"aliases": [
+			"Servante Dévouée",
+			"Devoted Servant"
+		],
+		"nightPriority": 5
+	},
+	"Comédien": {
+		"camp": "Village",
+		"description": "9bal ma yebda tor7, ya3tih Narrateur 3 rolet __b zhar__. Kol lila 3andou l7a9 yesta3mel we7ed fihom, weli yesta3mlou yetna7alou.",
+		"imgUrl": "https://cdn.discordapp.com/attachments/690729960230354974/1258058729123745842/latest.png?ex=6686a9fe&is=6685587e&hm=b63d8efc2c88cc049f48c0510c019ffae39ff28ecbbbc52c0840401bf3d5c179&",
+		"aliases": [
+			"Comédien",
+			"Dhamer",
+			"Clown"
+		]
+	},
+	"Astronome": {
+		"camp": "Village",
+		"description": "3andou l7a9 mara fel tor7 ychouf el njoum fel lil, w fel sbe7 el narrateur ya3ti fact 3al tor7.\nExemples mta3 facts: lvoyante tekdheb, l'infection saret/masaretch, fama role masrou9, etc.",
+		"imgUrl": "https://cdn.discordapp.com/attachments/690729960230354974/1258058861626265741/latest.png?ex=6686aa1e&is=6685589e&hm=2801c7d40c58f2f49acdd5ddf0dbbd808425c072f37283a6063736443f818265&",
+		"aliases": [
+			"Astronome"
+		],
+		"nightPriority": 6
+	},
+	"Juge": {
+		"camp": "Village",
+		"description": "Kol lila yakhtar 3abd l village matnajemch tvoti 3lih. Maynajemch yakhtar nafs l 3abd liltin wra b3adhhom.\nYebda yekhdem lila thenya.",
+		"eventQuestion": "Chkoun manna3 l juge mel vote?",
+		"imgUrl": "https://cdn.discordapp.com/attachments/690729960230354974/1258059364506271785/360.png?ex=6686aa96&is=66855916&hm=8a2a41e5ad0ac959840f9183d2a939291a497e151157301a1b6e74345e440756&",
+		"aliases": [
+			"Juge",
+			"9adhi"
+		],
+		"nightPriority": 6
+	},
+	"Noctambule": {
+		"camp": "Village",
+		"description": "Kol lila yakhtar 3abd yor9od ba7dheh, yekhoulou pouvoirou yesta3mlou fi blastou (w lekher fibelou). Maynajemch yakhtar nafs l 3abd martin.",
+		"imgUrl": "https://cdn.discordapp.com/attachments/690729960230354974/1258059639715659817/Noctambule.png?ex=6686aad7&is=66855957&hm=79c5fe2e4eac43726525a3124709b4e91d60b91b4808a3739c49439324cf52cf&",
+		"aliases": [
+			"Noctambule"
+		],
+		"nightPriority": 1
+	},
+	"Detective": {
+		"camp": "Village",
+		"description": "Kol lila yakhtar zouz mennes, w f sbe7 narrateur y9oul yal3bou fard team or not.",
+		"eventQuestion": "Li chefhom el detective fard team?",
+		"imgUrl": "https://cdn.discordapp.com/attachments/690729960230354974/1258059790286983259/Detective.png?ex=6686aafb&is=6685597b&hm=1b7c51b97f7fff735bb47405d345e42f7d63be94d8ce49003f8617f7ef3f88d2&",
+		"aliases": [
+			"Detective",
+			"Mou7a9e9",
+			"Conan"
+		],
+		"nightPriority": 6
+	},
+	"Loup Blanc": {
+		"camp": "Loners",
+		"description": "Yet7att fel groupe mta3 les loups. Lila ba3d lila, yakhtar yo9tel wala mayo9telch we7ed mel les loups li m3ah.",
+		"imgUrl": "https://www.loups-garous-en-ligne.com/jeu/assets/images/carte9.png",
+		"aliases": [
+			"Loup Blanc"
+		],
+		"nightPriority": 5
+	},
+	"Pyromane": {
+		"camp": "Loners",
+		"description": "Kol lila yakhtar 2 mennes ysobb 3lihom essence (mazzout/fuel), w fi ay lila ynajem ycha3el li sabb 3lihom lkol w yo9telhom. Li tsabb 3lihom mazzout lkol ya3rfou b3adhhom.",
+		"imgUrl": "https://cdn.discordapp.com/attachments/471476610563047424/634820657644830740/103551685_o.png",
+		"aliases": [
+			"Pyromane"
+		],
+		"nightPriority": 5
+	},
+	"Joueur de Flute": {
+		"camp": "Loners",
+		"description": "Kol lila yakhtar zouz ycharmihom. El charme hedha ma3andou 7atta effet, ama idha yakhlet ycharmi elli 7ayyin lkol, yerba7 el tor7.\nNOTE: Eli mcharmyin lkol ya3rfou b3adhhom.",
+		"imgUrl": "https://www.loups-garous-en-ligne.com/jeu/assets/images/carte15.png",
+		"aliases": [
+			"Joueur de Flute",
+			"jdf",
+			"Flute Player",
+			"Charmer"
+		],
+		"nightPriority": 5
+	},
+	"Alien": {
+		"camp": "Loners",
+		"description": "Kol maytala3 role mta3 3abd (yab3thou lel narrateur __fel nhar__) yo9tlou, sinon ymout howa.\nAlso, les loups maynejmouch yo9tlouh/y'infectiwah, donc ma ymout ken bel vote wala b rolet l village li yo9tlou (barbier, chasseur, sorcière, etc...)",
+		"imgUrl": "https://i.imgur.com/K9dCIsQ.png",
+		"aliases": [
+			"Alien"
+		]
+	},
+	"Assassin": {
+		"camp": "Loners",
+		"description": "Ynajem yo9tel we7ed lila ba3d lila. Les loups maynajmouch yo9tlouh. Yerba7 ki ymoutou ness kol.",
+		"imgUrl": "https://png.pngtree.com/png-clipart/20200727/original/pngtree-assassin-ninja-esports-mascot-logo-png-image_5370276.jpg",
+		"aliases": [
+			"Assassin"
+		],
+		"nightPriority": 5
+	},
+	"Pute": {
+		"camp": "Loners",
+		"description": "Kol lila takhtar player tor9od m3ah, w ken sta3mlou 3liha pouvoir, ysir 3al 3abd li ra9det m3ah.",
+		"imgUrl": "https://cdn.discordapp.com/attachments/690729960230354974/1258056014469533766/Courtisane.png?ex=6686a777&is=668555f7&hm=f4a033691fa2f5294045c0daae78604514a0cacdb826e561df4bb62faccbec56&",
+		"aliases": [
+			"Pute",
+			"9a7ba"
+		],
+		"nightPriority": 1
+	},
+	"Abominable Sectaire": {
+		"camp": "Loners",
+		"description": "Narrateur ya3tih fi awel el tor7 2 groupet fel village, w bech yerba7 lezem groupe menhom ymout.\nExemples mta3 groupet: lbnet w louled, li yelbsou lunettet w li ma yelbsouch, li esmhom fih akther men 5 7rouf w li a9al, etc.",
+		"imgUrl": "https://media.discordapp.net/attachments/690729960230354974/1258056080378957895/latest.png?ex=6686a787&is=66855607&hm=f6e645259762ebf75ad82f6c716316da17f16fdd522d9edd0a1f1f4bd06c107d&=&format=webp&quality=lossless&width=529&height=525",
+		"aliases": [
+			"Abominable Sectaire"
+		]
+	},
+	"Schizophrène": {
+		"camp": "Loners",
+		"description": "Awel el tor7 yakhtar we7ed ya3mel copie 3al role mte3ou w yesta3mlou tor7 kemel. El voyante tchoufou 3la ases el role li khdheh. Ken ymoutou les loups lkol, ywali kol lila y9oum yo9tel zeda.\nNote: Ma ynajem ycopi ken role mta3 villageois.",
+		"imgUrl": "https://cdn.discordapp.com/attachments/690729960230354974/1258056973199347803/schizo10.png?ex=6686a85b&is=668556db&hm=0e64521949148a6ced3459a4899ec134aee7f320594d93d44d47ca728ac48404&",
+		"aliases": [
+			"Schizophrène",
+			"Schizo",
+			"Psikopat",
+			"Rahma"
+		]
+	}
+}

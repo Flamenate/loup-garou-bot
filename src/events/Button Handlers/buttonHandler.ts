@@ -34,7 +34,7 @@ async function handleGameInfo(interaction: ButtonInteraction) {
         case "remRoles":
             const rolesByCamp = Object.groupBy(
                 currentGame.aliveRoles,
-                (item) => item.camp.name
+                (role) => `${role.camp.emoji} ${role.camp.name}`
             );
             await interaction.update({
                 embeds: [
@@ -44,8 +44,8 @@ async function handleGameInfo(interaction: ButtonInteraction) {
                         fields: Object.entries(rolesByCamp).map(
                             ([campName, roles]) => {
                                 return {
-                                    name: `${campName} (${roles.length})`,
-                                    value: roles
+                                    name: `${campName} (${roles!.length})`,
+                                    value: roles!
                                         .map((role) => role.name)
                                         .join("\n"),
                                     inline: true,

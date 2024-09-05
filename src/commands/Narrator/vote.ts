@@ -53,6 +53,12 @@ module.exports = {
                 true
             )
         );
+        if (ids.length === 0)
+            return await errorReply(
+                interaction,
+                "Please make sure to mention the players."
+            );
+
         const game = guildConfig.currentGame!;
         const accusedPlayers = game.alivePlayers.filter((player) =>
             ids.includes(player.id)

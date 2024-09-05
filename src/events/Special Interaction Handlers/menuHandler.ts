@@ -41,7 +41,7 @@ async function handleMarryMenu(interaction: StringSelectMenuInteraction) {
             embeds: [
                 new EmbedBuilder({
                     title: "💘 Cupid's Arrow",
-                    description: `You have been bound by love to ${secondPlayer.mention} (**${secondPlayer.originalNickname}**). This is effect will stay active for the rest of the game.`,
+                    description: `You have been bound by love to ${secondPlayer.mention} (**${secondPlayer.originalNickname}**). Your souls will stay intertwined for the rest of the game.`,
                     thumbnail: { url: secondMember?.avatarURL() || "" },
                 }).setColor("Fuchsia"),
             ],
@@ -60,7 +60,7 @@ async function handleMarryMenu(interaction: StringSelectMenuInteraction) {
             embeds: [
                 new EmbedBuilder({
                     title: "💘 Cupid's Arrow",
-                    description: `You have been bound by love to ${firstPlayer.mention} (**${firstPlayer.originalNickname}**). This is effect will stay active for the rest of the game.`,
+                    description: `You have been bound by love to ${firstPlayer.mention} (**${firstPlayer.originalNickname}**). Your souls will stay intertwined for the rest of the game.`,
                     thumbnail: { url: firstMember?.avatarURL() || "" },
                 }).setColor("Fuchsia"),
             ],

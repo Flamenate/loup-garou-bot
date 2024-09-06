@@ -33,13 +33,20 @@ const rest = new REST().setToken(process.env.BOT_TOKEN!);
             `Started refreshing ${commands.length} application (/) commands.`
         );
 
-        const data = (await rest.put(
-            Routes.applicationGuildCommands(
-                process.env.CLIENT_ID!,
-                process.env.MAIN_GUILD_ID!
-            ),
-            { body: commands }
-        )) as RESTPutAPIApplicationCommandsResult;
+        let data: RESTPutAPIApplicationCommandsResult;
+        if (process.env.ENVIRONMENT === "PRODUCTION")
+            data = (await rest.put(
+                Routes.applicationCommands(process.env.CLIENT_ID!),
+                { body: commands }
+            )) as RESTPutAPIApplicationCommandsResult;
+        else
+            data = (await rest.put(
+                Routes.applicationGuildCommands(
+                    process.env.CLIENT_ID!,
+                    process.env.MAIN_GUILD_ID!
+                ),
+                { body: commands }
+            )) as RESTPutAPIApplicationCommandsResult;
 
         console.log(
             `Successfully reloaded ${data.length} application (/) commands.`

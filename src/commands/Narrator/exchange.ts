@@ -42,12 +42,26 @@ module.exports = {
         ).getMember("new_player");
 
         if (!newPlayerMember || !(newPlayerMember instanceof GuildMember))
-            return errorReply(interaction, "Something went wrong.");
+            return await errorReply(interaction, "Something went wrong.");
+
+        const newPlayerExists = game.alivePlayers.find(
+            (player) => player.id === newPlayerMember.id
+        );
+        if (newPlayerExists)
+            return await errorReply(
+                interaction,
+                `${newPlayerMember} is already playing.`
+            );
 
         const newPlayer = await game.exchangePlayers(
             oldPlayerUser,
             newPlayerMember.user
         );
+        if (!newPlayer)
+            return await errorReply(
+                interaction,
+                `${oldPlayerUser} is not an alive player in the current game.`
+            );
 
         try {
             await newPlayerMember.send({

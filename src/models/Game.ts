@@ -227,9 +227,10 @@ export default class Game {
     }
 
     public async exchangePlayers(oldPlayerUser: User, newPlayerUser: User) {
-        const oldPlayerIndex = this.players.findIndex(
+        const oldPlayerIndex = this.alivePlayers.findIndex(
             (player) => player.id === oldPlayerUser.id
         );
+        if (oldPlayerIndex === -1) return null;
         const oldPlayer = this.players[oldPlayerIndex];
         this.players[oldPlayerIndex] = new Player({
             ...oldPlayer,

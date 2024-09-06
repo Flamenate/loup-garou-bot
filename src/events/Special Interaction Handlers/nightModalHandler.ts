@@ -20,7 +20,8 @@ module.exports = {
             const gameThread = await (textChannel as TextChannel).threads.fetch(
                 currentGame.threadIds.game
             );
-            await gameThread?.setLocked(false);
+            if (gameThread && gameThread.locked)
+                await gameThread.setLocked(false);
         } catch (error) {
             logger.write({
                 level: LogType.Warn,

@@ -7,6 +7,9 @@ import {
     TextInputStyle,
     ModalActionRowComponentBuilder,
     TextChannel,
+    GuildMember,
+    PermissionsBitField,
+    GuildChannelResolvable,
 } from "discord.js";
 import GuildConfig from "../../models/GuildConfig";
 import logger, { LogType } from "../../utils/Logger";
@@ -14,6 +17,15 @@ import logger, { LogType } from "../../utils/Logger";
 const data = new SlashCommandBuilder()
     .setName("next")
     .setDescription("Advance the day/night cycle (narrator only).");
+
+function memberHasManageThreads(
+    member?: GuildMember,
+    channel?: GuildChannelResolvable | null
+) {
+    if (!member || !channel) return false;
+    const perms = member.permissionsIn(channel);
+    return perms.has(PermissionsBitField.Flags.ManageThreads);
+}
 
 module.exports = {
     narratorOnly: true,
@@ -24,17 +36,21 @@ module.exports = {
         guildConfig: GuildConfig
     ) {
         const game = guildConfig.currentGame!;
+        const narrator = await interaction.guild?.members.fetch(
+            game.narratorId
+        );
         if (game.isDaytime) {
-            game.advanceToNight();
+            await game.advanceToNight();
             await interaction.reply({ embeds: [game.infoEmbed] });
             try {
-                const textChannel = await interaction.guild?.channels.fetch(
+                const gameChannel = await interaction.guild?.channels.fetch(
                     game.channelIds.text
                 );
                 const gameThread = await (
-                    textChannel as TextChannel
+                    gameChannel as TextChannel
                 ).threads.fetch(game.threadIds.game);
-                await gameThread?.setLocked(true);
+                if (memberHasManageThreads(narrator, gameChannel))
+                    await gameThread?.setLocked(true);
             } catch (error) {
                 logger.write({
                     level: LogType.Warn,

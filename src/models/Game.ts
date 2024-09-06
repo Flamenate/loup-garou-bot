@@ -215,8 +215,11 @@ export default class Game {
         );
     }
 
-    public async killPlayer(player: Player) {
+    public async killPlayer(player: Player, displayedRoleName?: string | null) {
         player.isAlive = false;
+        if (displayedRoleName) {
+            player.displayedRoleName = displayedRoleName;
+        }
         await pgClient.query("UPDATE games SET players = $2 WHERE uuid = $1", [
             this.uuid,
             this.players,

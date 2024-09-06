@@ -22,18 +22,27 @@ const data = new SlashCommandBuilder()
             .setDescription("Player to kill.")
             .setRequired(true)
             .setAutocomplete(true)
+    )
+    .addStringOption((opt) =>
+        opt
+            .setName("displayed_role")
+            .setDescription(
+                "The role to display when the bot announces their death. Leave blank if you want their original role."
+            )
     );
 
 async function killPlayer({
     interaction,
     game,
     player,
+    displayedRoleName,
 }: {
     interaction: ChatInputCommandInteraction;
     game: Game;
     player: Player;
+    displayedRoleName?: string | null;
 }) {
-    await game.killPlayer(player);
+    await game.killPlayer(player, displayedRoleName);
 
     const targetMember = await interaction.guild!.members.fetch(player.id);
     await changeMemberNickname(targetMember, player.gameNickname);
@@ -65,7 +74,7 @@ module.exports = {
         const game = guildConfig.currentGame!;
         const playerName = (
             interaction.options as CommandInteractionOptionResolver
-        ).getString("player");
+        ).getString("player", true);
         const targetPlayer = game.alivePlayers.find(
             (player) => player.originalNickname === playerName
         );
@@ -75,7 +84,16 @@ module.exports = {
                 "Please choose a player name from the list."
             );
 
-        await killPlayer({ interaction, game, player: targetPlayer });
+        const displayedRoleName = (
+            interaction.options as CommandInteractionOptionResolver
+        ).getString("displayed_role");
+
+        await killPlayer({
+            interaction,
+            game,
+            player: targetPlayer,
+            displayedRoleName,
+        });
 
         let soulmate: Player | undefined;
         if (targetPlayer.soulmateId) {
@@ -93,17 +111,21 @@ module.exports = {
                     description: `**${
                         targetPlayer.mention
                     }** met their demise... They were **${
-                        targetPlayer.role.name
+                        displayedRoleName || targetPlayer.role.name
                     }**.${
                         soulmate
                             ? `\nThey were also married to ${soulmate.mention} (**${soulmate.role.name}**) who died from grief.`
                             : ""
                     }`,
-                    thumbnail: { url: targetPlayer.role.imgUrl },
-                    footer: {
-                        iconURL: targetPlayer.role.camp.iconUrl,
-                        text: targetPlayer.role.camp.name,
+                    thumbnail: {
+                        url: displayedRoleName ? targetPlayer.role.imgUrl : "",
                     },
+                    footer: displayedRoleName
+                        ? {
+                              iconURL: targetPlayer.role.camp.iconUrl,
+                              text: targetPlayer.role.camp.name,
+                          }
+                        : { text: "?" },
                 }).setColor(targetPlayer.role.camp.color),
             ],
         });

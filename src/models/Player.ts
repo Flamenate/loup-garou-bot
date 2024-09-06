@@ -6,6 +6,7 @@ export type PlayerOptions = {
     roleName?: string;
     originalNickname: string;
     isAlive?: boolean;
+    displayedRoleName?: string | null;
 };
 
 export default class Player {
@@ -14,6 +15,7 @@ export default class Player {
     originalNickname: string;
     isAlive: boolean = false;
     soulmateId: string | null = null;
+    displayedRoleName: string | null = null;
 
     constructor(options: PlayerOptions) {
         this.id = options.id;
@@ -22,6 +24,7 @@ export default class Player {
             allRoles.find((role) => role.name === options.roleName)!;
         this.originalNickname = options.originalNickname;
         this.isAlive = options.isAlive ?? true;
+        this.displayedRoleName = options.displayedRoleName ?? null;
     }
 
     public get mention(): string {

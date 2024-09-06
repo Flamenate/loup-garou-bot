@@ -87,7 +87,7 @@ export default class GuildConfig {
     public async initGame(gameOptions: Omit<GameOptions, "uuid">) {
         const uuid = crypto.randomUUID();
         await pgClient.query(
-            `INSERT INTO games(uuid, guild_id, narrator_id, text_channel_id, vc_id, narrator_thread_id, game_thread_id, loup_thread_id, start_timestamp, players, time_cycle) VALUES ($1, ${gameOptions.guild_id}, ${gameOptions.narrator_id}, ${gameOptions.text_channel_id}, ${gameOptions.vc_id}, ${gameOptions.narrator_thread_id}, ${gameOptions.game_thread_id}, ${gameOptions.loup_thread_id}, $2, $3, $4)`,
+            `INSERT INTO games(uuid, guild_id, narrator_id, text_channel_id, vc_id, narrator_thread_id, game_thread_id, loup_thread_id, loner_thread_id, start_timestamp, players, time_cycle) VALUES ($1, ${gameOptions.guild_id}, ${gameOptions.narrator_id}, ${gameOptions.text_channel_id}, ${gameOptions.vc_id}, ${gameOptions.narrator_thread_id}, ${gameOptions.game_thread_id}, ${gameOptions.loup_thread_id}, ${gameOptions.loner_thread_id}, $2, $3, $4)`,
             [uuid, new Date(), gameOptions.players, gameOptions.time_cycle]
         );
         await pgClient.query(

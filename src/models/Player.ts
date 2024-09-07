@@ -6,6 +6,7 @@ export type PlayerOptions = {
     roleName?: string;
     originalNickname: string;
     isAlive?: boolean;
+    soulmateId?: string | null;
     displayedRoleName?: string | null;
 };
 
@@ -24,6 +25,7 @@ export default class Player {
             allRoles.find((role) => role.name === options.roleName)!;
         this.originalNickname = options.originalNickname;
         this.isAlive = options.isAlive ?? true;
+        this.soulmateId = options.soulmateId ?? null;
         this.displayedRoleName = options.displayedRoleName ?? null;
     }
 

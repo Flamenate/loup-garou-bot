@@ -118,14 +118,14 @@ module.exports = {
                             : ""
                     }`,
                     thumbnail: {
-                        url: displayedRoleName ? targetPlayer.role.imgUrl : "",
+                        url: displayedRoleName ? "" : targetPlayer.role.imgUrl,
                     },
                     footer: displayedRoleName
-                        ? {
+                        ? { text: "?" }
+                        : {
                               iconURL: targetPlayer.role.camp.iconUrl,
                               text: targetPlayer.role.camp.name,
-                          }
-                        : { text: "?" },
+                          },
                 }).setColor(targetPlayer.role.camp.color),
             ],
         });

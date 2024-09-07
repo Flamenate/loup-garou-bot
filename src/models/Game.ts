@@ -130,7 +130,11 @@ export default class Game {
         }, new Array<string>());
         const nightRolesByPriority = this.aliveRoles
             .reduce((priorityRoles, role) => {
-                if (role.nightPriority && role.name !== "Loup Garou")
+                if (
+                    role.nightPriority &&
+                    role.name !== "Loup Garou" &&
+                    !priorityRoles.includes(role)
+                )
                     priorityRoles.push(role);
                 return priorityRoles;
             }, new Array<Role>(allRoles.find((role) => role.name === "Loup Garou")!))

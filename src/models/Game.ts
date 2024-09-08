@@ -309,4 +309,12 @@ export default class Game {
             [this.uuid, this.winners, this.endTimestamp]
         );
     }
+
+    public async updateNarratorId(newNarratorId: string) {
+        this.narratorId = newNarratorId;
+        await pgClient.query(
+            "UPDATE games SET narrator_id = $2 WHERE uuid = $1",
+            [this.uuid, this.narratorId]
+        );
+    }
 }

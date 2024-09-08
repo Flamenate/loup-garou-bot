@@ -23,7 +23,7 @@ module.exports = {
                     title: "Current Narrator",
                     description: narratorId
                         ? `The current narrator is **<@${narratorId}>**.`
-                        : "This server has no set narrator.",
+                        : "This server has no narrator.",
                     timestamp: new Date(),
                 }).setColor("White"),
             ],

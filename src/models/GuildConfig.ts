@@ -37,11 +37,13 @@ export default class GuildConfig {
     }
 
     public async updateNarratorId(newNarratorId: string) {
+        this.narratorId = newNarratorId;
         await pgClient.query(
             "UPDATE guild_configs SET narrator_id = $2 WHERE guild_id = $1",
-            [this.guildId, newNarratorId]
+            [this.guildId, this.narratorId]
         );
-        this.narratorId = newNarratorId;
+        if (this.currentGame)
+            await this.currentGame.updateNarratorId(newNarratorId);
     }
 
     public async updateModRoleId(newRoleId: string) {

@@ -89,6 +89,7 @@ async function handleGameInfo(interaction: ButtonInteraction) {
             await interaction.update({
                 embeds: currentGame.narrationEmbeds,
             });
+            break;
 
         default:
             return;
@@ -127,6 +128,18 @@ async function handleRoleInfo(interaction: ButtonInteraction) {
     });
 }
 
+async function handleNarrationMessageUpdate(interaction: ButtonInteraction) {
+    const { currentGame } = getGuildConfig(interaction);
+    const [, uuid] = interaction.customId.split("|");
+    if (
+        interaction.user.id !== currentGame?.narratorId ||
+        uuid !== currentGame?.uuid
+    )
+        return;
+
+    await interaction.update({ embeds: currentGame.narrationEmbeds });
+}
+
 module.exports = {
     name: Events.InteractionCreate,
     async execute(interaction: Interaction) {
@@ -144,6 +157,10 @@ module.exports = {
 
             case "roleInfo":
                 await handleRoleInfo(interaction);
+                break;
+
+            case "updateNarration":
+                await handleNarrationMessageUpdate(interaction);
                 break;
 
             default:

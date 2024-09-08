@@ -7,6 +7,8 @@ import {
     ChannelType,
     ActionRowBuilder,
     StringSelectMenuBuilder,
+    ButtonBuilder,
+    ButtonStyle,
 } from "discord.js";
 import GuildConfig from "../../models/GuildConfig";
 import Game from "../../models/Game";
@@ -222,6 +224,16 @@ module.exports = {
                 time_cycle: { day: 0, night: 1 },
             });
 
+            const updateButtonActionRow = new ActionRowBuilder<ButtonBuilder>({
+                components: [
+                    new ButtonBuilder({
+                        customId: `updateNarration|${game.uuid}`,
+                        label: "Update Information",
+                        style: ButtonStyle.Success,
+                        emoji: "ℹ️",
+                    }),
+                ],
+            });
             try {
                 const narratorMessageComponents = game.aliveRoles
                     .map((role) => role.name)
@@ -245,8 +257,9 @@ module.exports = {
                                   }),
                               ],
                           }),
+                          updateButtonActionRow,
                       ]
-                    : [];
+                    : [updateButtonActionRow];
                 await narrationThread.send({
                     content: interaction.user.toString(),
                     embeds: [

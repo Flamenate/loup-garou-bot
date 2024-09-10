@@ -155,7 +155,7 @@ module.exports = {
                 await handleGameInfo(interaction);
                 break;
 
-            case "roleInfo":
+            case "roleMenu":
                 await handleRoleInfo(interaction);
                 break;
 

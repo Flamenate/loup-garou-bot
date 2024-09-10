@@ -6,7 +6,10 @@ import {
 } from "discord.js";
 import getGuildConfig from "../../utils/getGuildConfig";
 import { errorReply, WarnEmbed } from "../../utils/replies";
-import { allRoles } from "../../models/Role";
+import { allRoles, RoleOptions } from "../../models/Role";
+import pgClient from "../../utils/pgClient";
+import Game from "../../models/Game";
+import Player, { PlayerOptions } from "../../models/Player";
 
 async function handleMarryMenu(interaction: StringSelectMenuInteraction) {
     const { currentGame, narratorId } = getGuildConfig(interaction);
@@ -130,10 +133,37 @@ async function handleRoleInfo(interaction: StringSelectMenuInteraction) {
     await interaction.update({ embeds: [role.infoEmbed] });
 }
 
+async function handleHistoryMenu(interaction: StringSelectMenuInteraction) {
+    const [, userId] = interaction.customId.split("|");
+    if (interaction.user.id !== userId) return;
+
+    const {
+        rows: [gameData],
+    } = await pgClient.query("SELECT * FROM games WHERE uuid = $1", [
+        interaction.values[0],
+    ]);
+    const players = (gameData.players as Array<any>).map(
+        (playerFromJson: PlayerOptions & { role: RoleOptions }) =>
+            new Player({
+                ...playerFromJson,
+                roleName: playerFromJson.role.name,
+            })
+    );
+    const game = new Game({
+        ...gameData,
+        players,
+    });
+    await interaction.update({
+        embeds: [game.narrationEmbeds[1]],
+        components: [],
+    });
+}
+
 module.exports = {
     name: Events.InteractionCreate,
     async execute(interaction: Interaction) {
         if (!interaction.isStringSelectMenu()) return;
+
         const [type] = interaction.customId.split("|");
         switch (type) {
             case "marry":
@@ -146,6 +176,10 @@ module.exports = {
 
             case "roleMenu":
                 await handleRoleInfo(interaction);
+                break;
+
+            case "history":
+                await handleHistoryMenu(interaction);
                 break;
 
             default:

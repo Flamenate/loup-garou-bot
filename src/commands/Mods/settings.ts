@@ -24,7 +24,8 @@ module.exports = {
                         iconURL: interaction.guild!.iconURL() || "",
                     },
                     title: "Settings",
-                    description: "Use `/set` to change settings.",
+                    description:
+                        "Anyone with the `Manage Server` permission or with a role higher than the minimum moderation role can use the `/set` command to change the settings below.",
                     fields: [
                         {
                             name: "Current Narrator",

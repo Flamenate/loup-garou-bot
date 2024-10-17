@@ -189,10 +189,17 @@ module.exports = {
                 const playerMember = await interaction.guild!.members.fetch(
                     gamePlayerIds[i]
                 );
+                let displayName = playerMember.displayName;
+                displayName = displayName.replace(
+                    /^(?:\.|-|,|\+|\*|\)|\(|'|&|%|\$|\"|!)+/g,
+                    ""
+                );
+                if (playerMember.displayName !== displayName)
+                    changeMemberNickname(playerMember, displayName);
                 gamePlayers[i] = new Player({
                     id: gamePlayerIds[i],
                     role,
-                    originalNickname: playerMember.displayName,
+                    originalNickname: displayName,
                 });
                 playerMember
                     .send({

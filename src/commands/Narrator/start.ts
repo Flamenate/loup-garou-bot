@@ -308,7 +308,7 @@ module.exports = {
 
                 await changeMemberNickname(
                     interaction.member as GuildMember,
-                    "[[Narrateur]]"
+                    "(Narrateur)"
                 );
             } catch (error) {
                 logger.write({

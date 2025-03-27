@@ -231,15 +231,17 @@ export default class Game {
     }
 
     public async exchangePlayers(oldPlayerUser: User, newPlayerUser: User) {
-        const oldPlayerIndex = this.alivePlayers.findIndex(
+        const oldPlayerIndex = this.players.findIndex(
             (player) => player.id === oldPlayerUser.id
         );
         if (oldPlayerIndex === -1) return null;
+
         const oldPlayer = this.players[oldPlayerIndex];
+        if (!oldPlayer.isAlive) return null;
+
         this.players[oldPlayerIndex] = new Player({
             ...oldPlayer,
             id: newPlayerUser.id,
-            role: allRoles.find((role) => role.name === oldPlayer.role.name),
         });
         await pgClient.query("UPDATE games SET players = $2 WHERE uuid = $1", [
             this.uuid,

@@ -162,7 +162,7 @@ export default class Game {
                 ],
             }).setColor("White"),
             new EmbedBuilder({
-                title: "🐺 Game",
+                title: "🐺 Loup Garou",
                 description: `Narrator: <@${
                     this.narratorId
                 }>.\nMarried Couple: ${
@@ -181,7 +181,7 @@ export default class Game {
                         : `Game was started <t:${moment(
                               this.startTimestamp
                           ).unix()}:R>`
-                }.`,
+                }.\n-# Game ID: \`${this.uuid}\``,
                 fields: Object.entries(playersByCamp).map(
                     ([campName, campPlayers]) => {
                         return {

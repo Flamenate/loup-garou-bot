@@ -17,6 +17,7 @@ export default class Player {
     isAlive: boolean = false;
     soulmateId: string | null = null;
     displayedRoleName: string | null = null;
+    accusationCount: number = 0; //not populated from db
 
     constructor(options: PlayerOptions) {
         this.id = options.id;

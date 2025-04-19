@@ -35,7 +35,7 @@ type TimeCycle = {
 
 export default class Game {
     static MinimumPlayerCount: number = 7;
-    static MaximumPlayerCount: number = 25;
+    static MaximumPlayerCount: number = 24;
 
     uuid: string;
     guildId: string;

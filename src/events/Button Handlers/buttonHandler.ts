@@ -140,6 +140,58 @@ async function handleNarrationMessageUpdate(interaction: ButtonInteraction) {
     await interaction.update({ embeds: currentGame.narrationEmbeds });
 }
 
+async function handleAccusation(interaction: ButtonInteraction) {
+    const { currentGame } = getGuildConfig(interaction);
+    const [, uuid, userId, playerIdOrEnd] = interaction.customId.split("|");
+    if (
+        !currentGame ||
+        uuid !== currentGame.uuid ||
+        userId !== interaction.user.id
+    )
+        return;
+
+    if (playerIdOrEnd === "end") {
+        currentGame.alivePlayers.forEach((player) => {
+            player.accusationCount = 0;
+        });
+        return await interaction.update({ components: [] });
+    }
+
+    const player = currentGame.alivePlayers.find(
+        (player) => player.id === playerIdOrEnd
+    );
+    if (!player) return;
+
+    player.accusationCount++;
+    const accusedPlayers = currentGame.alivePlayers
+        .filter((player) => player.accusationCount > 0)
+        .toSorted((a, b) => b.accusationCount - a.accusationCount);
+
+    await interaction.update({
+        embeds: [
+            new EmbedBuilder({
+                title: "Accusation",
+                description: `${
+                    interaction.user
+                } click on the buttons to count accusations.\n${accusedPlayers
+                    .map(
+                        (player) =>
+                            `1. **${player.gameNickname}:** ${
+                                player.accusationCount
+                            } accusation${
+                                player.accusationCount > 1 ? "s" : ""
+                            }`
+                    )
+                    .join("\n")}`,
+                footer: {
+                    text: `Total accusations: ${accusedPlayers.length}`,
+                },
+                timestamp: new Date(),
+            }).setColor("NotQuiteBlack"),
+        ],
+    });
+}
+
 module.exports = {
     name: Events.InteractionCreate,
     async execute(interaction: Interaction) {
@@ -161,6 +213,10 @@ module.exports = {
 
             case "updateNarration":
                 await handleNarrationMessageUpdate(interaction);
+                break;
+
+            case "accuse":
+                await handleAccusation(interaction);
                 break;
 
             default:

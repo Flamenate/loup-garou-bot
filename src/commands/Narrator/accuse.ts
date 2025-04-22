@@ -50,6 +50,7 @@ module.exports = {
                     new ActionRowBuilder<ButtonBuilder>();
             }
             const player = game.alivePlayers[i];
+            player.accusationCount = 0;
             actionRows[currentActionRowIndex].addComponents(
                 new ButtonBuilder({
                     customId: `accuse|${game.uuid}|${interaction.user.id}|${player.id}`, //83 (6 + 1 + 36 + 1 + 19 + 1 + 19) characters. Max for customId is 100.

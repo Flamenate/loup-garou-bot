@@ -7,6 +7,7 @@ import {
     EmbedBuilder,
 } from "discord.js";
 import GuildConfig from "../../models/GuildConfig";
+import { ErrorEmbed } from "../../utils/replies";
 
 const data = new SlashCommandBuilder()
     .setName("accuse")
@@ -16,6 +17,7 @@ const buttonsPerActionRow = 5;
 const maxActionRows = 5;
 
 module.exports = {
+    narratorOnly: true,
     inGameOnly: true,
     data,
     async execute(
@@ -23,6 +25,12 @@ module.exports = {
         guildConfig: GuildConfig
     ) {
         const game = guildConfig.currentGame!;
+        if (game.accusationActive)
+            return await interaction.reply({
+                embeds: [new ErrorEmbed("Accusation is already active.")],
+                ephemeral: true,
+            });
+
         let neededActionRows = Math.ceil(
             game.alivePlayers.length / buttonsPerActionRow
         );
@@ -32,13 +40,17 @@ module.exports = {
         const actionRows = new Array<ActionRowBuilder<ButtonBuilder>>(
             neededActionRows
         );
+        let currentActionRowIndex = 0;
         for (let i = 0; i < game.alivePlayers.length; i++) {
-            const index = i % buttonsPerActionRow;
-            if (!actionRows[index]) {
-                actionRows[index] = new ActionRowBuilder<ButtonBuilder>();
+            if (i > 0 && i % buttonsPerActionRow === 0) {
+                currentActionRowIndex++;
+            }
+            if (!actionRows[currentActionRowIndex]) {
+                actionRows[currentActionRowIndex] =
+                    new ActionRowBuilder<ButtonBuilder>();
             }
             const player = game.alivePlayers[i];
-            actionRows[index].addComponents(
+            actionRows[currentActionRowIndex].addComponents(
                 new ButtonBuilder({
                     customId: `accuse|${game.uuid}|${interaction.user.id}|${player.id}`, //83 (6 + 1 + 36 + 1 + 19 + 1 + 19) characters. Max for customId is 100.
                     label: player.gameNickname,

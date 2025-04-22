@@ -54,6 +54,7 @@ export default class Game {
     events: string[];
     winners?: string;
     vote: Vote | null = null;
+    accusationActive: boolean = false;
 
     constructor(options: GameOptions) {
         this.uuid = options.uuid;

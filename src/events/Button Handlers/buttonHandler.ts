@@ -184,7 +184,10 @@ async function handleAccusation(interaction: ButtonInteraction) {
                     )
                     .join("\n")}`,
                 footer: {
-                    text: `Total accusations: ${accusedPlayers.length}`,
+                    text: `Total accusations: ${accusedPlayers.reduce(
+                        (acc, player) => acc + player.accusationCount,
+                        0
+                    )}`,
                 },
                 timestamp: new Date(),
             }).setColor("NotQuiteBlack"),

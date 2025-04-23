@@ -35,7 +35,7 @@ module.exports = {
             game.alivePlayers.length / buttonsPerActionRow
         );
         if (neededActionRows < maxActionRows) {
-            neededActionRows++;
+            neededActionRows++; //for the end accusation button
         }
         const actionRows = new Array<ActionRowBuilder<ButtonBuilder>>(
             neededActionRows
@@ -55,7 +55,7 @@ module.exports = {
                 new ButtonBuilder({
                     customId: `accuse|${game.uuid}|${interaction.user.id}|${player.id}`, //83 (6 + 1 + 36 + 1 + 19 + 1 + 19) characters. Max for customId is 100.
                     label: player.gameNickname,
-                    style: ButtonStyle.Primary,
+                    style: ButtonStyle.Secondary,
                 })
             );
         }
@@ -64,16 +64,13 @@ module.exports = {
             label: "End Accusation",
             style: ButtonStyle.Danger,
         });
-        if (!actionRows[actionRows.length - 1]) {
-            actionRows.push(
+        if (!actionRows[neededActionRows - 1]) {
+            actionRows[neededActionRows - 1] =
                 new ActionRowBuilder<ButtonBuilder>().setComponents(
                     endAccusationButton
-                )
-            );
+                );
         } else {
-            actionRows[actionRows.length - 1].addComponents(
-                endAccusationButton
-            );
+            actionRows[neededActionRows - 1].addComponents(endAccusationButton);
         }
 
         await interaction.reply({
